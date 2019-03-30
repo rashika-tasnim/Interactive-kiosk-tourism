@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale-1.0">
+    <meta http-equiv="X-UA-compatible" content="ie-edge">
+    <title>Interactive kiosk of vigelan park</title>
+    <meta name="generator" content="Scroll Nav - Beautiful Smooth Scrolling, oslo travel site">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" lang="en" content="oslo travel site">
+    <meta name="keywords" lang="en" content="oslo travel site">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>  
+    
+    <body>
+        <nav class="navbar navbar-expand-md fixed-top" id="main-navigation">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto text-center">                                                             
+                    
+                            <a id="en-btn" class="dropdown-item scroll-trigger nav-link" href="#"><img src="./images/usa-flag-1444052.jpg" alt="usa flag"> <span class="text-warning lan-sz"> English </span></a>
+                            <a id="norsk-btn"class="dropdown-item scroll-trigger nav-link" href="#"><img src="./images/norway.png" alt="norway flag"><span class="text-warning lan-sz">Norsk</span></a>                         
+                        </ul>
+                      </div> -->
+                </div>
+            </div>
+        </nav>
+
+<div id="background">       
+            <div class="content">
+              <h1 data-translatable class="text-warning">Welcome to Vigeland park // Velkommen til The Vigeland Park</h1>
+              <h3 data-translatable class="text-warning" >This is an interactive kiosk support Voice command. see information option to know all the info. // 
+                 Dette er en interaktiv kioskstøtte Stemmekommando. se informasjon alternativ for å vite all info.</h3>
+            </div>      
+</div>
+<div class="navigation m-4">
+    <ul>
+        <li><a data-translatable href="index.html" class="home-nav">Home // hjem</a> >></li>
+        <li><a data-translatable href="hotel.html"> Gallery // Galleri</a></li>
+    </ul>
+</div>
+<div class="container m-4">
+    <div class="row">
+        
+        <div class="col-lg-2"> <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button></div>
+        <div class="col-lg-10">
+           
+        <div class="w3-content w3-display-container">
+            <div class="row">
+              <div class=col-lg-12>
+                <a href="photo-1.html" target="_blank">                    
+                   <img class="mySlides" src="./images/entry place.jpg" alt="carousel photo-1, entry place of viglen park" style="width:750px;">                   
+                  </a>
+                <a href="photo-2.html"  target="_blank">
+                  <img class="mySlides" src="./images/photo-2.jpg" alt="carousel photo-2 cycle of life viglen park" style="width:750px;">
+                </a> 
+                <a href="photo-3.html"  target="_blank">
+                   <img class="mySlides" src="./images/photo-3.jpg" alt="carousel photo-3 The fountain of viglen park"style="width:750px;">
+                </a> 
+                <a href="photo-4.html"  target="_blank">
+                      <img class="mySlides" src="./images/photo-4.jpg" alt="carousel photo-4 The angry boy of viglen park" style="width:750px;">
+                </a> 
+                <a href="#"  target="_blank">
+                   <img class="mySlides" src="./images/photo-5.jpg" alt="carousel photo-5 father with child of viglen park" style="width:750px;">
+                </a>
+                <a href="#"  target="_blank">
+                     <img class="mySlides" src="./images/photo-6.jpg" alt="carousel photo-6 mother with child of viglen park" style="width:750px;">
+                </a>
+                <a href="#"  target="_blank">
+                  <img class="mySlides" src="./images/The Monolith.jpg" alt="carousel photo-6 the monolith of vigeland park" style="width:750px;">
+             </a>      
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>  
+     <script src="js/jquery.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/dom-i18n.min.js"></script>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+      
+<script>
+       var enButton = document.getElementById('en-btn');
+    var frButton = document.getElementById('norsk-btn');
+    var i18n = domI18n({
+      selector: '[data-translatable]',
+      separator: ' // ',
+      languages: ['en', 'norsk'],
+      defaultLanguage: 'en'
+    });
+
+    enButton.onclick = function () {
+      i18n.changeLanguage('en');
+    };
+
+    frButton.onclick = function () {
+      i18n.changeLanguage('norsk');
+    };
+
+
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
+
+recognition.continuous = true;
+
+recognition.onend = function() {
+    recognition.start();
+}
+
+recognition.onresult = function(event) {
+    var current = event.resultIndex;
+    var transcript = event.results[current][0].transcript;
+    if(transcript.includes('next')){
+      plusDivs(1)
+      
+    }
+    if(transcript.includes('previous')){
+      plusDivs(-1)
+    }
+	if(transcript.includes('English')){
+	    i18n.changeLanguage('en');
+	}
+    if(transcript.includes('Norwegian')){
+	i18n.changeLanguage('norsk');
+}	
+if(transcript.includes('back')){
+window.location.href = 'index.html';
+}
+    console.log(transcript);
+}
+recognition.start();
+			
+
+</script>
+
+
+    </body>
+    
+</html>
+

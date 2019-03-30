@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale-1.0">
+    <meta http-equiv="X-UA-compatible" content="ie-edge">
+    <title>Interactive kiosk of vigelan park</title>
+    <meta name="generator" content="Scroll Nav - Beautiful Smooth Scrolling, oslo travel site">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" lang="en" content="oslo travel site">
+    <meta name="keywords" lang="en" content="oslo travel site">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>  
+    
+    <body>
+        <nav class="navbar navbar-expand-md fixed-top" id="main-navigation">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto text-center">                                                             
+                    
+                            <a id="en-btn" class="dropdown-item scroll-trigger nav-link" href="#"><img src="./images/usa-flag-1444052.jpg" alt="usa flag"> <span class="text-warning lan-sz"> English </span></a>
+                            <a id="norsk-btn"class="dropdown-item scroll-trigger nav-link" href="#"><img src="./images/norway.png" alt="norway flag"><span class="text-warning lan-sz">Norsk</span></a>                         
+                        </ul>
+                      </div> -->
+                </div>
+            </div>
+        </nav>
+<div id="background">       
+            <!-- Optional: some overlay text to describe the video -->
+            <div class="content">
+              <h1 data-translatable class="text-warning">Welcome to Vigeland park // Velkommen til The Vigeland Park</h1>
+              <h3 data-translatable class="text-warning" >This is an interactive kiosk support Voice command. see information option to know all the info. // 
+                 Dette er en interaktiv kioskstøtte Stemmekommando. se informasjon alternativ for å vite all info.</h3>
+            </div>       
+</div>
+<div class="container m-3">
+        <div class="row navigation">
+            <ul>
+                <li><a data-translatable href="index.html" class="home-nav">Home // hjem</a> >></li>
+                <li><a data-translatable href="hotel.html"> Visit Now // informasjon</a></li>
+            </ul>
+      </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+          <input type='button' class="btn btn-primary" onclick='responsiveVoice.speak(" opening hours: 2 May - 31 August. Tuesday - Sunday: 10.00 - 17.00. Monday closed. 1 September - 30 April. Tuesday - Sunday: 12.00 - 16.00. Monday closed. Parking: Limited parking with parking charge at the main entrance at Kirkeveien. Alternative parking with parking charge along Monolittveien, on the west side of the park.");'  value='🔊 Listen to it'/>
+          <input type='button' class="btn btn-danger" onclick='responsiveVoice.speak("");'  value='🔊 stop'/>
+          <h2>Opening hours</h2>
+      <p>2 May - 31 August. Tuesday - Sunday: 10.00 - 17.00. Monday closed.</p>
+      <p>1 September - 30 April. Tuesday - Sunday: 12.00 - 16.00. Monday closed.</p>
+      <p>Closed: 1 January, Good Friday, Easter Sunday, 1 and 17 May, Christmas Eve, Christmas Day, New Year's Eve.</p>
+      <h2>Admission</h2>
+      <p>Adults: NOK 80,-. Students, seniors (+67), children (+7): NOK 40,-. Children under 7 years: free entrance. Groups (minimum ten persons): 40,-. Oslo Pass: Free entrance.</p>
+      <h3>Parking</h3>
+      <p>Limited parking with parking charge at the main entrance at Kirkeveien. Alternative parking with parking charge along Monolittveien, on the west side of the park, or in Middelthunsgate, at Frognerbadet.
+      </p>
+    </div>
+  <div class="col-lg-6">
+      <h3>Entrance</h3>
+      <p>Free entrance, open 24h.</p>
+      <h3>Situation</h3>
+      <p>Majorstua / Frogner, Oslo west.</p>
+      <p>Main entrance from Kirkeveien.</p>
+      <h3>Access</h3>
+      <p>Bus 20 or tram 12 to the Vigeland Park. All westbound lines (T-bane) to Majorstuen station.</p>
+      <p>By car, follow Ring 2 to Majorstuen, Kirkeveien. </p>
+      
+  </div>
+  </div>
+</div>
+
+     <script src="js/jquery.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/dom-i18n.min.js"></script>
+      <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+      
+<script>
+       var enButton = document.getElementById('en-btn');
+    var frButton = document.getElementById('norsk-btn');
+    var i18n = domI18n({
+      selector: '[data-translatable]',
+      separator: ' // ',
+      languages: ['en', 'norsk'],
+      defaultLanguage: 'en'
+    });
+
+    enButton.onclick = function () {
+      i18n.changeLanguage('en');
+    };
+
+    frButton.onclick = function () {
+      i18n.changeLanguage('norsk');
+    };
+
+
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
+
+recognition.continuous = true;
+
+recognition.onend = function() {
+    recognition.start();
+}
+
+recognition.onresult = function(event) {
+    var current = event.resultIndex;
+    var transcript = event.results[current][0].transcript;
+    if(transcript.includes('next')){
+      plusDivs(1)
+      
+    }
+    if(transcript.includes('previous')){
+      plusDivs(-1)
+    }
+	if(transcript.includes('English')){
+	    i18n.changeLanguage('en');
+	}
+    if(transcript.includes('Norwegian')){
+	i18n.changeLanguage('norsk');
+}	
+    console.log(transcript);
+}
+recognition.start();
+			
+
+</script>
+
+
+    </body>
+    
+</html>
+

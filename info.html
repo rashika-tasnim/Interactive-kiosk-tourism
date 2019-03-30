@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale-1.0">
+    <meta http-equiv="X-UA-compatible" content="ie-edge">
+    <title>Interactive kiosk of vigelan park</title>
+    <meta name="generator" content="Scroll Nav - Beautiful Smooth Scrolling, oslo travel site">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" lang="en" content="oslo travel site">
+    <meta name="keywords" lang="en" content="oslo travel site">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+  </head>  
+    
+    <body>
+      <nav class="navbar navbar-expand-md fixed-top" id="main-navigation">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto text-center">                                                              
+                        <a id="en-btn" class="dropdown-item scroll-trigger nav-link" href="#"><img src="./images/usa-flag-1444052.jpg" alt="usa flag"> <span class="text-warning lan-sz"> English </span></a>
+                        <a id="norsk-btn"class="dropdown-item scroll-trigger nav-link" href="#"><img src="./images/norway.png" alt="norway flag"><span class="text-warning lan-sz">Norsk</span></a>                         
+                    </ul>
+                  </div> 
+            </div>
+        </div>
+    </nav>
+<div id="background">       
+            
+       <div class="content">
+              <h1 data-translatable class="text-warning">Welcome to Vigeland park // Velkommen til The Vigeland Park</h1>
+              <h3 data-translatable class="text-warning" >This is an interactive kiosk support Voice command. see information option to know all the info. // 
+                 Dette er en interaktiv kioskstøtte Stemmekommando. se informasjon alternativ for å vite all info.</h3>
+           </div>       
+</div>
+<div class="container m-2">
+        <div class="row navigation">
+            <ul>
+                <li><a data-translatable href="index.html" class="home-nav">Home // hjem</a> >> </li>
+                <li><a data-translatable href="hotel.html"> Information // informasjon</a></li>
+            </ul>
+      </div>
+  </div>
+  <div class="container">
+    <div class="row m-4">
+      <div  class="col-lg-6">
+          <input type='button' class="btn btn-primary" onclick='responsiveVoice.speak("The Vigeland Park is one of the largest sculpture park in the world made by a single artist, and is one of Norway most popular tourist attractions.The Vigeland Park was mainly completed between 1939 and 1949. Most of the sculptures are placed in five units along an 850 meter long axis: The Main gate, the Bridge with playground of children, the Fountain, the Monolith plateau and the Wheel of Life.");'  value='🔊 Listen to it'/>
+          <input type='button' class="btn btn-danger" onclick='responsiveVoice.speak("");'  value='🔊 stop'/>
+          <h2>History</h2>
+        <p>The Vigeland Park is the world's largest sculpture park made by a single artist, and is one of Norway's most popular tourist attractions. The park is open to visitors all year round.
+
+          The unique sculpture park is Gustav Vigeland's lifework with more than 200 sculptures in bronze, granite and wrought iron. Vigeland was also in charge of the design and architectural layout of the park. The Vigeland Park was mainly completed between 1939 and 1949.
+          
+          Most of the sculptures are placed in five units along an 850 meter long axis: The Main gate, the Bridge with the Children's playground, the Fountain, the Monolith plateau and the Wheel of Life.
+          </p>
+         <p>The construction work in what was to become the Vigeland park lasted for many years. The area east of the pond had been a public park since the turn of the 20th century. In 1924 it was decided that Vigeland's Fountain and Monolith with surrounding granite groups were to be erected on a large area west of the pond. In 1931 Vigeland's park plan, including the bridge decorated with sculptures, was approved by the City Council. The magnificent main gate, which was financed by Oslo Sparebank, had already been approved in 1927. 
+          </p> 
+      </div>
+      <div class="col-lg-6">
+          <h2>voice command</h2>
+          <p>The purpose of this interactive kiosk is to help all the visitors. This kiosk is also support speech recgnition. All the voice commands are given below:
+          </p>
+          <p><b> What to see- it will go to gallery page</b></p>
+          <p><b> Information- it will go to gallery page</b></p>
+          <p><b> Map- it will go to gallery page</b></p>
+          <p><b> emergency call- it will go to gallery page</b></p>
+          <p><b>Go back- it will direct to the home page</b></p>
+          <p><b> Next- To see the next images from gallery page</b></p>
+          <p><b>Previous- To see all the previous images from gallery page</b></p>
+          <p><b>Norwegian- To translate the website into Norwegian language</b></p>
+          <p><b>English- To translate the website into English Languge</b></p>
+      </div>
+    </div>
+  </div>
+
+     <script src="js/jquery.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/dom-i18n.min.js"></script>
+      <script src="https://code.responsivevoice.org/responsivevoice.js"> </script>
+              
+<script>
+    var enButton = document.getElementById('en-btn');
+    var frButton = document.getElementById('norsk-btn');
+    var i18n = domI18n({
+      selector: '[data-translatable]',
+      separator: ' // ',
+      languages: ['en', 'norsk'],
+      defaultLanguage: 'en'
+  });
+        
+ enButton.onclick = function () {
+     i18n.changeLanguage('en');
+   };
+        
+   frButton.onclick = function () {
+    i18n.changeLanguage('norsk');
+  };
+        
+  var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var recognition = new SpeechRecognition();
+        
+    recognition.continuous = true;
+        
+    recognition.onend = function() {
+    recognition.start();
+        }
+        
+ recognition.onresult = function(event) {
+   var current = event.resultIndex;
+    var transcript = event.results[current][0].transcript;
+   if(transcript.includes('next')){
+     plusDivs(1)
+              
+  }
+    if(transcript.includes('previous')){
+      plusDivs(-1)
+   }
+  if(transcript.includes('English')){
+       i18n.changeLanguage('en');
+    }
+  if(transcript.includes('Norwegian')){
+   i18n.changeLanguage('norsk');
+        }	
+    console.log(transcript);
+        }
+ recognition.start();
+                
+  </script>
+        
+ </body>
+            
+</html>

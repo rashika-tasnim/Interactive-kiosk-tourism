@@ -11,8 +11,8 @@
     <meta name="keywords" lang="en" content="oslo travel site">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>  
     
@@ -25,56 +25,43 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto text-center">                                                             
-                      </ul>
+                    
+                            <a id="en-btn" class="dropdown-item scroll-trigger nav-link" href="#"><img src="./images/usa-flag-1444052.jpg" alt="usa flag"> <span class="text-warning lan-sz"> English </span></a>
+                            <a id="norsk-btn"class="dropdown-item scroll-trigger nav-link" href="#"><img src="./images/norway.png" alt="norway flag"><span class="text-warning lan-sz">Norsk</span></a>                         
+                        </ul>
+                      </div> -->
                 </div>
             </div>
         </nav>
 
-  <div id="background">
-        <div class="container d-flex h-100">
-          <div class="row justify-content-center align-self-center mx-auto">            
-             <h1 data-translatable class="mt-7 text-warning" ><b> Welcome to The Vigeland Park </b> // 
-                <b> Velkommen til The Vigeland Park </b> </h1> 
-                <h3 data-translatable class="mt-4 text-warning" >This is an interactive kiosk support Voice command. All informations are given in the information page. // 
-                 Dette er en interaktiv kioskstøtte Stemmekommando. se informasjon alternativ for å vite all info.
-                </h3>                      
+<div id="background">       
+            
+            <div class="content">
+              <h1 data-translatable class="text-warning">Welcome to Vigeland park // Velkommen til The Vigeland Park</h1>
+              <h3 data-translatable class="text-warning" >This is an interactive kiosk support Voice command. see information option to know all the info. // 
+                 Dette er en interaktiv kioskstøtte Stemmekommando. se informasjon alternativ for å vite all info.</h3>
+            </div>      
+</div>
+<div class="container m-5">
+    <div class="row navigation">
+        <ul>
+            <li><a data-translatable href="index.html" class="home-nav">Home // hjem</a> >></li>
+            <li><a data-translatable href="hotel.html"> emergency call  // 
+                nødanropi</a></li>
+        </ul>    
         </div>
-    </div>   
-<div class="container mt-4">
-    <div class="row kiosk">
-          <div class="col-lg-4 icon p-3"><i class="fas fa-images" aria-hidden="true"></i>
-             <button id="myBtn" type="submit"class="m-3" onclick="window.location.href = 'Gallery.html'"> What to see </button>
-          </div>     
-          <div class="col-lg-4"><i class="fa fa-info-circle" aria-hidden="true"></i>
-            <button id="myBtn" type="submit"class="m-3" onclick="window.location.href = 'info.html'"> Information </button>
+        <div class="row">
+          <div class="col-lg-10 offset-1">
+            <h2>Phone: 23 49 37 00</h2>
           </div>
-          <div class="col-lg-4"><i class="fa fa-globe" aria-hidden="true"></i>
-            <button id="myBtn" type="submit"class="m-3" onclick="window.location.href = 'map.html'"> Map </button>
-          </div>
-          <div class="col-lg-4"><i class="fa fa-phone-square" aria-hidden="true"></i>
-            <button id="myBtn" class="m-3" onclick="window.location.href = 'emg_call.html'"> Emergency Call </button>
-          </div> 
-          <div class="col-lg-4"><i class="fa fa-language" aria-hidden="true"></i><br>
-            <a id="en-btn" class="nav-link" href="#"><img src="./images/usa-flag-1444052.jpg" alt="usa flag"> <span class="lang-clr"> English </span></a>
-            <a id="norsk-btn"class="nav-link" href="#"><img src="./images/norway.png" alt="norway flag"> <span class="lang-clr"> Norsk </span></a>                         
-          </div>  
-          <div class="col-lg-4"><i class="fa fa-language" aria-hidden="true"></i>
-            <button id="myBtn" class="m-3" onclick="window.location.href = 'visit.html'"> Visit Now </button>
-          </div>           
-     </div>
-   </div>    
-</div>  
+        </div>
+      </div>
+  
      <script src="js/jquery.min.js"></script>
      <script src="js/popper.min.js"></script>
      <script src="js/bootstrap.min.js"></script>
       <script src="js/main.js"></script>
       <script src="js/dom-i18n.min.js"></script>
-      <script src="https://code.responsivevoice.org/responsivevoice.js"> </script>
-
-<script>
-  responsiveVoice.speak("Welcome to vigeland park Interactive kiosk. This app support voice command. All the commands are in the information page");
-</script>
-
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -96,8 +83,8 @@ function showDivs(n) {
 </script>
       
 <script>
-      var enButton = document.getElementById('en-btn');
-      var frButton = document.getElementById('norsk-btn');
+       var enButton = document.getElementById('en-btn');
+    var frButton = document.getElementById('norsk-btn');
     var i18n = domI18n({
       selector: '[data-translatable]',
       separator: ' // ',
@@ -139,30 +126,15 @@ recognition.onresult = function(event) {
     if(transcript.includes('Norwegian')){
 	i18n.changeLanguage('norsk');
 }	
-if(transcript.includes('what')){
-window.location.href = 'Gallery.html';
-}
-if(transcript.includes('emergency call')){
-window.location.href = 'emg_call.html';
-
-}
-if(transcript.includes('information')){
-window.location.href = 'info.html';
-
-}
-if(transcript.includes('map')){
-window.location.href = 'map.html';
-
-}
-if(transcript.includes('visit')){
-window.location.href = 'visit.html';
-
+if(transcript.includes('back')){
+window.location.href = 'index.html';
 }
 
     console.log(transcript);
 }
 recognition.start();
 			
+
 </script>
 
 
